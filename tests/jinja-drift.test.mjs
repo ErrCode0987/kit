@@ -62,7 +62,7 @@ test('매크로가 kit_base_url 과 accent 주입을 모두 담고 있다', () =
   assert.match(source, /kit_base_url/, 'kit_base_url 글로벌이 없다');
   assert.match(
     source,
-    /macqueen0987\.github\.io\/kit/,
+    /errcode0987\.github\.io\/kit/,
     'Pages 기본 origin 이 없다',
   );
   assert.match(source, /\/v1\/app\.css/, 'v1/app.css 경로가 없다');

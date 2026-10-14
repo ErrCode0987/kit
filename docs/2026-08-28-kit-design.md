@@ -54,7 +54,7 @@
 
 **그래서 `mpw`를 §2 현황, §5.2 accent 표, §9 마이그레이션 순서에서 모두 제거했다.** 대상은 12개에서 **11개**가 되고 hue 305(purple)는 비었다 — 새 서비스가 생기면 쓸 수 있다.
 
-`projects/mpw`와 `archive/mpw-dup`은 2026-08-29에 폐기했다(합계 270MB). 폐기 전에 로컬에만 있던 미푸시 7커밋(dulgibro 갤러리 최초 구현)을 원격에 밀어 이력을 보존했다 — https://github.com/macqueen0987/personal-web. 크롬 확장 `toss-getter`만 `archive/mpw-toss-getter/`로 건졌고, 미커밋 해체 작업도 패치로 함께 남겼다.
+`projects/mpw`와 `archive/mpw-dup`은 2026-08-29에 폐기했다(합계 270MB). 폐기 전에 로컬에만 있던 미푸시 7커밋(dulgibro 갤러리 최초 구현)을 원격에 밀어 이력을 보존했다 — https://github.com/ErrCode0987/personal-web. 크롬 확장 `toss-getter`만 `archive/mpw-toss-getter/`로 건졌고, 미커밋 해체 작업도 패치로 함께 남겼다.
 
 #### `aitg` — 웹 표면이 없다
 
@@ -76,7 +76,7 @@
 
 대상은 **9개**가 된다.
 
-**업데이트 (2026-09-05) — iot 재합류.** 위 진단은 더 이상 최신이 아니다. `projects/iot`는 이관이 아니라 **완전히 새로 작성**돼 `macqueen0987/IoT`(Universal IR/WiFi Remote — ESP32 MicroPython 노드 + FastAPI `ir-server` + SmartThings C2C 브리지)로 라즈베리파이 위에서 실제로 돈다. `docker-compose.prod.yml` 기준 운영 중이고 커밋도 활발하다 — 위에 적힌 "esp32heater"·"homeserver"·"4커밋" 서술은 그 이전 시도를 가리키는 것으로, 지금 코드베이스와는 무관하다.
+**업데이트 (2026-09-05) — iot 재합류.** 위 진단은 더 이상 최신이 아니다. `projects/iot`는 이관이 아니라 **완전히 새로 작성**돼 `ErrCode0987/IoT`(Universal IR/WiFi Remote — ESP32 MicroPython 노드 + FastAPI `ir-server` + SmartThings C2C 브리지)로 라즈베리파이 위에서 실제로 돈다. `docker-compose.prod.yml` 기준 운영 중이고 커밋도 활발하다 — 위에 적힌 "esp32heater"·"homeserver"·"4커밋" 서술은 그 이전 시도를 가리키는 것으로, 지금 코드베이스와는 무관하다.
 
 홈 대시보드(`/`)가 `kit/v1/app.css`를 로드한다. **Jinja 서비스가 아니라 정적 HTML을 직접 서빙**하므로(`FileResponse` + `StaticFiles`), `jinja/kit.html` 매크로는 쓰지 않고 `<link>`·accent `<style>`을 손으로 써 넣었다 — 내용은 매크로가 만드는 것과 동일하다. 예약해뒀던 accent hue 130(lime)을 그대로 썼다 (`--kit-accent: oklch(0.780 0.150 130)`). `jinja/consumers.json`의 `pending`에서는 뺐다(Jinja 마이그레이션 대상이 아니므로 `consumers`에도 넣지 않는다).
 
@@ -135,7 +135,7 @@ services/kit/
 
 ### 4.1 서브도메인과 컨테이너
 
-**전용 컨테이너를 만들지 않는다.** `bundle/dist`를 edge Caddy에 볼륨 마운트하고 `file_server`로 직접 내보내는 경로는 그대로다. 기본 CDN은 GitHub Pages(`https://macqueen0987.github.io/kit/v1/…`)다. edge 마운트는 optional origin이다.
+**전용 컨테이너를 만들지 않는다.** `bundle/dist`를 edge Caddy에 볼륨 마운트하고 `file_server`로 직접 내보내는 경로는 그대로다. 기본 CDN은 GitHub Pages(`https://errcode0987.github.io/kit/v1/…`)다. edge 마운트는 optional origin이다.
 
 - 컨테이너가 늘지 않는다.
 - 소비자는 `KIT_BASE_URL`로 origin을 고른다. 기본값은 Pages라 MacServer가 내려도 기본값 소비자는 스타일이 남는다.
