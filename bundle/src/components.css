@@ -344,7 +344,7 @@
   .row-title { display: block; text-decoration: none; overflow-wrap: anywhere; }
   .row-title:hover { text-decoration: underline; text-decoration-color: var(--color-border-strong); }
   .row-meta { display: block; color: var(--color-muted); font-size: 13px; }
-  .row-ref { margin-right: 6px; color: var(--color-muted); font-family: var(--font-mono); }
+  .row-ref { margin-right: 6px; color: var(--color-muted); font-family: var(--font-mono); font-size: .86em; }
 
   /* 스켈레톤: 데이터가 오기 전 같은 모양의 틀. 움직임 줄이기 설정이면 정지 */
   .sk { display: block; border-radius: 4px; background-color: var(--color-surface-2); }
