@@ -61,15 +61,16 @@ test('on-accent는 모든 서비스 accent 위에서 AA를 통과한다', () => 
   assert.deepEqual(failures, [], `accent 위 텍스트 대비 미달: ${failures.join(', ')}`);
 });
 
-test('서비스 accent는 10개이고 hue가 서로 20도 이상 떨어져 있다', () => {
+test('서비스 accent는 11개이고 hue가 서로 20도 이상 떨어져 있다', () => {
   // 12 -> 11: mpw 폐기(스펙 §2.1).
   // 11 -> 10: stock 이 자기 accent 를 유지해 빠졌다.
   // 10 ->  9: COLLARS 가 kit 소비자가 아니라고 판정돼 빠졌다.
   // 이 규칙은 kit 이 색을 배정하는 서비스에만 적용되므로, 표에서 빠진 서비스는
   // 검사 대상이 아니다. 근거는 parse-tokens.mjs 의 각 주석에 있다.
   //  9 -> 10: collars(hub 대시보드)가 비어 있던 265 를 받았다(2026-10-17).
-  // 비어 있는 hue: 95(amber), 305(purple), 330(magenta).
-  assert.equal(SERVICE_ACCENTS.length, 10);
+  // 10 -> 11: home 이 110 을 받았다(2026-10-17).
+  // 비어 있는 hue: 305(purple), 330(magenta). 95(amber)는 home(110)과 15도라 더는 못 쓴다.
+  assert.equal(SERVICE_ACCENTS.length, 11);
   const hues = SERVICE_ACCENTS.map((s) => s.hue).sort((a, b) => a - b);
   for (let i = 1; i < hues.length; i++) {
     assert.ok(hues[i] - hues[i - 1] >= 20,

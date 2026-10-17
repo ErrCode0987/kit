@@ -280,3 +280,14 @@ test('I4 — 레이어 순서 선언이 파일 맨 앞에 살아남는다', () =
   const before = css.slice(0, layerIdx);
   assert.ok(!before.includes('{'), '@layer 순서 선언보다 앞에 블록 규칙이 와 있다');
 });
+
+test('components: sec/row/count/sk 가 번들에 있다', () => {
+  // 부분 일치 방지: 베이스 클래스는 `{`까지 붙여 확인한다(.sec-warn 만 있어도 통과하는 함정).
+  const required = [
+    '.sec{', '.sec-warn', '.sec-danger', '.sec-title', '.count',
+    '.row{', '.row-title', '.row-meta', '.row-ref', '.sk{', '.sk-row',
+  ];
+  for (const cls of required) {
+    assert.ok(css.includes(cls), `컴포넌트 누락: ${cls}`);
+  }
+});

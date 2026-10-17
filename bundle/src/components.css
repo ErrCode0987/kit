@@ -330,4 +330,27 @@
   }
 
   .pagination { display: flex; align-items: center; gap: --spacing(1); }
+
+  /* 구획·목록 행·개수·스켈레톤 — collars hub 대시보드(dash.html)에서 옮겨 온 모양. */
+  .sec { border-top: 3px solid var(--color-border-strong); padding-top: 12px; min-width: 0; }
+  .sec-warn   { border-top-color: var(--color-warning); }
+  .sec-danger { border-top-color: var(--color-danger); }
+  .sec-title { margin-bottom: 10px; font-size: 15px; font-weight: 600; }
+  .sec-title .count { margin-left: 6px; color: var(--color-muted); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .count { color: var(--color-muted); font-variant-numeric: tabular-nums; }
+
+  .row { padding: 8px 0; border-bottom: 1px solid var(--color-border); }
+  .row:last-child { border-bottom: 0; }
+  .row-title { display: block; text-decoration: none; overflow-wrap: anywhere; }
+  .row-title:hover { text-decoration: underline; text-decoration-color: var(--color-border-strong); }
+  .row-meta { display: block; color: var(--color-muted); font-size: 13px; }
+  .row-ref { margin-right: 6px; color: var(--color-muted); font-family: var(--font-mono); }
+
+  /* 스켈레톤: 데이터가 오기 전 같은 모양의 틀. 움직임 줄이기 설정이면 정지 */
+  .sk { display: block; border-radius: 4px; background-color: var(--color-surface-2); }
+  .sk-row { height: 14px; margin: 4px 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .sk { animation: kit-sk 1.4s ease-in-out infinite; }
+    @keyframes kit-sk { 50% { opacity: .45; } }
+  }
 }

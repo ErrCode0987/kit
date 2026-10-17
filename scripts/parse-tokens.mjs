@@ -68,4 +68,7 @@ export const SERVICE_ACCENTS = [
   //  18.2도라 규칙을 위반했을 것이다.)
   { name: 'iot',        hue: 130, chroma: 0.150, nick: 'lime' },
   { name: 'chzzk-auth', hue: 160, chroma: 0.150, nick: 'spring' },
+  // 2026-10-17: home(가정 대시보드). 원래 160(teal 계열)을 원했으나 chzzk-auth 가 쓰고 있다.
+  // 130(iot)과 160 사이 어디도 20도 규칙을 못 지켜서, 가장 가까운 빈 값 110 을 받는다(iot 20도, gallery 35도).
+  { name: 'home',       hue: 110, chroma: 0.140, nick: 'chartreuse' },
 ];

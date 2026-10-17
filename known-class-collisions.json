@@ -26,12 +26,21 @@
   "card": [
     "ops"
   ],
+  "count": [
+    "ops"
+  ],
   "empty": [
     "novel",
     "ops"
   ],
   "input": [
     "itad"
+  ],
+  "row": [
+    "ops"
+  ],
+  "sec": [
+    "ops"
   ],
   "select": [
     "itad"
