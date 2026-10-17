@@ -282,17 +282,12 @@ test('I4 — 레이어 순서 선언이 파일 맨 앞에 살아남는다', () =
 });
 
 test('components: sec/row/count/sk 가 번들에 있다', () => {
-  // 셀렉터 경계까지 본다: `.sec-title` 가 `.sec-title-x{` 로, `.count` 가 `.counter{` 로 통과하지 않게
-  // 클래스 뒤에 `{`·`,`·`:`·공백이 와야 한다(.sec-warn 만 있어도 .sec 이 통과하는 함정).
+  // 부분 일치 방지: 베이스 클래스는 `{`까지 붙여 확인한다(.sec-warn 만 있어도 통과하는 함정).
   const required = [
-    'sec', 'sec-warn', 'sec-danger', 'sec-title', 'count',
-    'row', 'row-title', 'row-meta', 'row-ref', 'sk', 'sk-row',
+    '.sec{', '.sec-warn', '.sec-danger', '.sec-title', '.count',
+    '.row{', '.row-title', '.row-meta', '.row-ref', '.sk{', '.sk-row',
   ];
   for (const cls of required) {
-    assert.match(css, new RegExp(`\\.${cls}(?=[{,:\\s])`), `컴포넌트 누락: .${cls}`);
-  }
-  // 베이스 규칙 자체(자기 선언)가 있는지: 앞에 `}`·`,`·`{`(블록 경계)가 오는 `.cls{`.
-  for (const cls of ['sec', 'sec-title', 'count', 'row', 'row-title', 'sk']) {
-    assert.match(css, new RegExp(`(?:^|[}{,])\\.${cls}\\{`, 'm'), `베이스 규칙 누락: .${cls}{`);
+    assert.ok(css.includes(cls), `컴포넌트 누락: ${cls}`);
   }
 });

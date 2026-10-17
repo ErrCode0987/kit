@@ -17,7 +17,6 @@
   ],
   "btn": [
     "chzzk-auth",
-    "home",
     "itad",
     "ops"
   ],
@@ -41,7 +40,6 @@
     "ops"
   ],
   "sec": [
-    "home",
     "ops"
   ],
   "select": [
