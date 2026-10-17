@@ -35,6 +35,10 @@ export const SERVICE_ACCENTS = [
   // 배정값 indigo(265)는 실제와 어긋나 있었다 — 진짜 primary 는 teal
   // oklch(0.557 0.095 206)로 배정에서 58.9도 떨어져 있고, 그 자체로 aitg(215)와
   // 8.9도라 20도 규칙을 통과하지도 못한다. 표에 남겨둘 근거가 없다.
+  // 2026-10-17: 반납된 265 를 collars(hub — git.lan 첫 화면 관제 대시보드)가 다시 쓴다.
+  // 옛 COLLARS(React·Mantine 앱)와는 다른 것이다 — 이쪽은 정적 HTML 이 kit 번들을 그대로 쓴다.
+  // 이웃: logflare(240) 25도, profile(285) 20도.
+  { name: 'collars',    hue: 265, chroma: 0.120, nick: 'indigo' },
   { name: 'profile',    hue: 285, chroma: 0.115, nick: 'violet' },
   // hue 305(purple)는 비어 있다 — mpw 가 폐기되면서 반납됐다(스펙 §2.1).
   { name: 'novel',      hue:  20, chroma: 0.140, nick: 'rose' },

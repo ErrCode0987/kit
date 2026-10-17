@@ -209,6 +209,7 @@ L을 0.780으로 고정하고 hue만 돌린다. 그래서 어느 서비스를 �
 | `agent-gate` | 185 | 0.130 | teal (기본값) |
 | `aitg` | 215 | 0.125 | azure |
 | `logflare` | 240 | 0.135 | blue |
+| `collars` | 265 | 0.120 | indigo (2026-10-17, hub 대시보드 — 옛 COLLARS 앱과 별개) |
 | `profile` | 285 | 0.115 | violet |
 | `gallery` | 75 | 0.090 | gold (원래 330 magenta — §5.3) |
 | `novel` | 20 | 0.140 | rose |
