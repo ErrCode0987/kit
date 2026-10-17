@@ -1,12 +1,13 @@
 {
   "alert": [
     "chzzk-auth",
-    "novel"
+    "novel",
+    "ops"
   ],
   "badge": [
-    "agent-gate",
     "chzzk-auth",
-    "novel"
+    "novel",
+    "ops"
   ],
   "badge-ok": [
     "chzzk-auth"
@@ -15,29 +16,24 @@
     "chzzk-auth"
   ],
   "btn": [
-    "agent-gate",
     "chzzk-auth",
-    "itad"
+    "itad",
+    "ops"
   ],
   "btn-primary": [
-    "agent-gate",
     "chzzk-auth"
   ],
-  "check-row": [
-    "agent-gate"
+  "card": [
+    "ops"
   ],
   "empty": [
-    "novel"
+    "novel",
+    "ops"
   ],
   "input": [
-    "agent-gate",
     "itad"
   ],
   "select": [
-    "agent-gate",
     "itad"
-  ],
-  "textarea": [
-    "agent-gate"
   ]
 }
